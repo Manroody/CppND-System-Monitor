@@ -40,6 +40,16 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
+
+// Added for PID values
+enum PIDStates {
+  kUtime_ = 13,
+  kStime_,
+  kCutime_,
+  kCstime_,
+  kStarttime_ = 21
+};
+
 std::vector<std::string> CpuUtilization();
 long Jiffies();
 long ActiveJiffies();
