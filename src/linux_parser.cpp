@@ -107,6 +107,7 @@ float LinuxParser::MemoryUtilization() {
  
   return memPercent/memTotal;
 }
+// DONE
 
 // TODO: Read and return the system uptime
 long LinuxParser::UpTime() {
@@ -120,11 +121,13 @@ long LinuxParser::UpTime() {
   }
   return stol(uptime);
 }
+// DONE
 
 // TODO: Read and return the number of jiffies for the system
 long LinuxParser::Jiffies() {
   return ActiveJiffies() + IdleJiffies();
 }
+// DONE
 
 // TODO: Read and return the number of active jiffies for a PID
 // REMOVE: [[maybe_unused]] once you define the function
@@ -141,6 +144,7 @@ long LinuxParser::ActiveJiffies(int pid) {
   }
   return stol(stat[kUtime_]) + stol(stat[kStime_]) + stol(stat[kCutime_]) + stol(stat[kCstime_]);
 }
+// DONE
 
 // TODO: Read and return the number of active jiffies for the system
 long LinuxParser::ActiveJiffies() {
@@ -157,6 +161,7 @@ long LinuxParser::ActiveJiffies() {
   // Sum total of active times
   return userTime + niceTime + systemallTime + virtallTime + stealTime;
 }
+// DONE
 
 // TODO: Read and return the number of idle jiffies for the system
 long LinuxParser::IdleJiffies() {
@@ -165,6 +170,7 @@ long LinuxParser::IdleJiffies() {
   // ioWait is added in the idleTime
   return stol(cpuData[kIdle_]) + stol(cpuData[kIOwait_]);
 }
+// DONE
 
 // TODO: Read and return CPU utilization
 vector<string> LinuxParser::CpuUtilization() {
@@ -185,6 +191,7 @@ vector<string> LinuxParser::CpuUtilization() {
  
   return cpuData;
 }
+// DONE
 
 // TODO: Read and return the total number of processes
 int LinuxParser::TotalProcesses() {
@@ -203,6 +210,7 @@ int LinuxParser::TotalProcesses() {
   }
   return 0;
 }
+// DONE
 
 // TODO: Read and return the number of running processes
 int LinuxParser::RunningProcesses() {
@@ -221,6 +229,7 @@ int LinuxParser::RunningProcesses() {
   }
   return 0;
 }
+// DONE
 
 // TODO: Read and return the command associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
@@ -233,6 +242,7 @@ string LinuxParser::Command(int pid) {
   }
   return string();
 }
+// DONE
 
 // TODO: Read and return the memory used by a process
 // REMOVE: [[maybe_unused]] once you define the function
@@ -256,6 +266,7 @@ string LinuxParser::Ram(int pid) {
   }
   return string();
 }
+// DONE
 
 // TODO: Read and return the user ID associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
@@ -275,6 +286,7 @@ string LinuxParser::Uid(int pid) {
   }
   return string();
 }
+// DONE
 
 // TODO: Read and return the user associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
@@ -297,6 +309,7 @@ string LinuxParser::User(int pid) {
   }
   return string();
 }
+// DONE
 
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
@@ -313,3 +326,4 @@ long LinuxParser::UpTime(int pid) {
   }
   return stol(stat[kStarttime_])/sysconf(_SC_CLK_TCK) - UpTime();
 }
+// DONE
